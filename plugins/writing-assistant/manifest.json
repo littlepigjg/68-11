@@ -1,0 +1,22 @@
+{
+  "id": "writing-assistant",
+  "name": "写作助手",
+  "version": "1.1.0",
+  "type": "interactive_component",
+  "description": "提供实时字数统计、快捷样式切换、常用诗句模板等辅助功能，提升写作效率。",
+  "author": {
+    "name": "创意工作室",
+    "email": "creative@example.com"
+  },
+  "hostVersion": ">=1.0.0",
+  "icon": "✍️",
+  "license": "MIT",
+  "keywords": ["assistant", "writing", "助手", "字数统计", "模板"],
+  "permissions": ["storage", "dom_access", "read_config", "write_config"],
+  "defaultConfig": {
+    "showCharCount": true,
+    "showWordCount": true,
+    "showPageEstimate": true,
+    "autoSave": true
+  }
+}

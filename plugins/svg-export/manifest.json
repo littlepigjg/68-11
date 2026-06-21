@@ -1,0 +1,21 @@
+{
+  "id": "svg-export",
+  "name": "SVG矢量导出",
+  "version": "1.0.0",
+  "type": "export_format",
+  "description": "将手写内容导出为SVG矢量格式，支持无损缩放，适合打印和专业设计用途。",
+  "author": {
+    "name": "官方插件",
+    "email": "support@example.com"
+  },
+  "hostVersion": ">=1.0.0 <2.0.0",
+  "icon": "📐",
+  "license": "MIT",
+  "keywords": ["svg", "vector", "矢量", "export"],
+  "permissions": ["storage", "canvas_access"],
+  "defaultConfig": {
+    "embedFonts": true,
+    "compress": false,
+    "includeMetadata": true
+  }
+}

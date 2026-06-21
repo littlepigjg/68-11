@@ -11,10 +11,15 @@ class HandwritingApp {
         this.customFontFamily = null;
         this.debounceTimer = null;
         
+        this.pluginManager = null;
+        this.pluginIntegration = null;
+        this.pluginMarketUI = null;
+        
         this.init();
     }
 
     async init() {
+        console.log('开始初始化应用...');
         this.showLoading();
         
         try {
@@ -24,11 +29,55 @@ class HandwritingApp {
             console.warn('预加载字体失败:', error);
         }
         
+        console.log('绑定事件处理...');
         this.eventHandlers.bindAll();
+        
+        console.log('应用初始样式...');
         await this.eventHandlers.applyStyle('kaishu');
+        
+        console.log('生成预览...');
         this.generatePreview();
         
+        console.log('准备初始化插件系统...');
+        try {
+            await this.initPluginSystem();
+            console.log('插件系统初始化调用完成');
+        } catch (e) {
+            console.error('插件系统初始化调用异常:', e);
+        }
+        
+        console.log('隐藏加载动画...');
         this.hideLoading();
+        console.log('应用初始化完成');
+    }
+
+    async initPluginSystem() {
+        console.log('开始初始化插件系统...');
+        console.log('PluginManager:', typeof PluginManager);
+        console.log('PluginIntegration:', typeof PluginIntegration);
+        console.log('PluginMarketUI:', typeof PluginMarketUI);
+        try {
+            const HOST_VERSION = '1.0.0';
+            
+            this.pluginManager = new PluginManager(HOST_VERSION);
+            await this.pluginManager.init();
+            
+            this.pluginIntegration = new PluginIntegration(this, this.pluginManager);
+            this.pluginIntegration.init();
+            
+            this.pluginMarketUI = new PluginMarketUI(this.pluginManager);
+            this.pluginMarketUI.init();
+            
+            const marketBtn = this.pluginIntegration.createPluginMenuButton();
+            marketBtn.addEventListener('click', () => this.pluginMarketUI.open());
+            
+            document.body.appendChild(this.pluginMarketUI.createMarketButton());
+            
+            console.log('插件系统初始化完成');
+            console.log('已安装插件:', this.pluginManager.getAllPlugins().length);
+        } catch (error) {
+            console.error('插件系统初始化失败:', error);
+        }
     }
 
     debouncedGenerate() {

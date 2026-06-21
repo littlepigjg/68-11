@@ -355,3 +355,48 @@ input[type="range"]::-webkit-slider-thumb {
         max-height: none;
     }
 }
+
+#plugin-export-container {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 16px;
+}
+
+#plugin-render-effects-container {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 16px;
+}
+
+#plugin-components-container {
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.plugin-component-wrapper {
+    transition: all 0.2s;
+}
+
+.plugin-component-wrapper:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+#plugin-menu-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    transition: all 0.2s;
+}
+
+#plugin-menu-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}

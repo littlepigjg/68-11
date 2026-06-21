@@ -1,0 +1,27 @@
+{
+  "id": "watermark-effect",
+  "name": "水印效果",
+  "version": "1.0.0",
+  "type": "render_effect",
+  "description": "为生成的图片添加自定义水印文字，支持位置、大小、透明度、旋转角度调节。",
+  "author": {
+    "name": "官方插件",
+    "email": "support@example.com",
+    "url": "https://example.com"
+  },
+  "hostVersion": ">=1.0.0",
+  "icon": "💧",
+  "homepage": "https://example.com/plugins/watermark",
+  "repository": "https://github.com/example/watermark-plugin",
+  "license": "MIT",
+  "keywords": ["watermark", "水印", "brand", "logo"],
+  "permissions": ["canvas_access", "storage"],
+  "defaultConfig": {
+    "text": "手写体生成器",
+    "fontSize": 48,
+    "opacity": 0.3,
+    "position": "bottom-right",
+    "rotation": -30,
+    "color": "#999999"
+  }
+}

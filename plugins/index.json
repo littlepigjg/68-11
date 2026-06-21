@@ -1,0 +1,29 @@
+[
+  {
+    "id": "watermark-effect",
+    "name": "水印效果",
+    "version": "1.0.0",
+    "type": "render_effect",
+    "description": "为生成的图片添加自定义水印文字",
+    "icon": "💧",
+    "downloadUrl": "dist/watermark-effect-1.0.0.json"
+  },
+  {
+    "id": "svg-export",
+    "name": "SVG矢量导出",
+    "version": "1.0.0",
+    "type": "export_format",
+    "description": "导出为SVG矢量格式，支持无损缩放",
+    "icon": "📐",
+    "downloadUrl": "dist/svg-export-1.0.0.json"
+  },
+  {
+    "id": "writing-assistant",
+    "name": "写作助手",
+    "version": "1.1.0",
+    "type": "interactive_component",
+    "description": "字数统计、快捷样式、诗文模板",
+    "icon": "✍️",
+    "downloadUrl": "dist/writing-assistant-1.1.0.json"
+  }
+]
